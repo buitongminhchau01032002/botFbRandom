@@ -3,7 +3,7 @@ const request = require('request')
 
 //process.env.NAME_VARIABLES
 let getHomePage = (req, res) => {
-    return res.send('Hello world 2.1')
+    return res.status(200).send('Hello world 2.1')
 };
 
 let postWebhook = (req, res) => {
