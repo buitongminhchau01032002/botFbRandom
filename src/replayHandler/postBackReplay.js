@@ -1,4 +1,5 @@
-const request = require('request')
+const request = require('request');
+const template = require('../templates');
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 
@@ -31,18 +32,6 @@ function callSendAPI(sender_psid, response) {
     })
 
 }
-
-const replayGET_STARTED = async (sender_psid) => {
-    let response1;
-    let profile = await getProfile(sender_psid);
-    response1 = { "text": `Xin chào ${profile.last_name} ${profile.first_name}, mình là Mitoo` };
-    let response2 = getMainMenu();
-    await callSendAPI(sender_psid, response1);
-    await callSendAPI(sender_psid, response2);
-}
-
-
-
 const getProfile = (sender_psid) => {
     return new Promise((resolve, reject) => {
         request({
@@ -62,64 +51,30 @@ const getProfile = (sender_psid) => {
     })
 }
 
-
-const getMainMenu = () => {
-    return {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-                "elements": [
-                    {
-                        "title": "Mình là Mitoo",
-                        "subtitle": "Bạn có thể trò chuyện với Mitoo bằng một số lựa chọn bên dưới",
-                        "image_url": "https://picsum.photos/id/102/300/400",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Mitoo là ai?",
-                                "payload": "ABOUT",
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Bắt đầu ngay",
-                                "payload": "START",
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Góp ý cho Mitoo",
-                                "payload": "FEED_BACK",
-                            }
-                        ],
-                    },
-                    {
-                        "title": "Mình là Mitoo",
-                        "subtitle": "Bạn có thể trò chuyện với Mitoo bằng một số lựa chọn bên dưới",
-                        "image_url": "https://picsum.photos/id/102/300/400",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Mitoo là ai?",
-                                "payload": "ABOUT",
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Bắt đầu ngay",
-                                "payload": "START",
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Góp ý cho Mitoo",
-                                "payload": "FEED_BACK",
-                            }
-                        ],
-                    }
-                ]
-            }
-        }
-    }
+const replayGET_STARTED = async (sender_psid) => {
+    let response1;
+    let profile = await getProfile(sender_psid);
+    response1 = { "text": `Xin chào ${profile.last_name} ${profile.first_name}, mình là Mitoo` };
+    let response2 = template.getMainMenuTemplate();
+    await callSendAPI(sender_psid, response1);
+    await callSendAPI(sender_psid, response2);
 }
 
+const replayMAIN_MENU = async (sender_psid) => {
+    let response = template.getMainMenuTemplate();
+    await callSendAPI(sender_psid, response);
+}
+
+
+const replaySTART = async (sender_psid) => {
+    let response = template.getStartTemplate();
+    await callSendAPI(sender_psid, response);
+}
+
+
+
 module.exports = {
-    replayGET_STARTED
+    replayGET_STARTED,
+    replaySTART,
+    replayMAIN_MENU
 }
