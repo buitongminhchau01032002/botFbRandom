@@ -1,6 +1,6 @@
 require('dotenv').config();
 const request = require('request')
-const {sendMess} = require('./replyHandler/postBackReply')
+const sendMess = require('./replyHandler/postBackReply')
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 // Handles messages events
