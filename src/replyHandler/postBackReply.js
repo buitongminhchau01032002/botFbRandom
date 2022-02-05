@@ -132,7 +132,7 @@ const replyDICE_FINISH = async (sender_psid, quantity) => {
     for (let i = 1; i < quantity; i++) {
         responseString += `, "${num[i]}" `;
     }
-    responseString += "nè!"
+    responseString += (quantity === 1 ? " nè!" : "nè!");
     await callSendAPI(sender_psid, {text: responseString});
     await sendQuickReply(sender_psid, templates.contiDice(quantity));
 }
