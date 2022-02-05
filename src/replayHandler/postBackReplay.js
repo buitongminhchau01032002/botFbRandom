@@ -49,13 +49,12 @@ const getProfile = (sender_psid) => {
             console.log('get profile done');
             console.log(body);
             profile = JSON.parse(body);
+            console.log(profile);
+            return profile;
         } else {
             console.error("get profile error: " + err);
         }
     });
-    console.log(profile);
-
-    return profile;
 }
 
 
