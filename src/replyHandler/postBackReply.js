@@ -145,6 +145,7 @@ const replyCHOOSE_START = async (sender_psid) => {
         id: sender_psid,
         listChoose: []
     })
+    console.log(stateChoose)
 }
 
 
