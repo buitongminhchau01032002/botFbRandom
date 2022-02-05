@@ -134,6 +134,16 @@ function diceNum() {
                 "content_type": "text",
                 "title": "1 viên",
                 "payload": "DICE_1",
+            },
+            {
+                "content_type": "text",
+                "title": "1 viên",
+                "payload": "DICE_2",
+            },
+            {
+                "content_type": "text",
+                "title": "1 viên",
+                "payload": "DICE_3",
             }
         ]
     }
