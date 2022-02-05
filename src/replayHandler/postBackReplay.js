@@ -71,6 +71,17 @@ const replaySTART = async (sender_psid) => {
 }
 
 
+const replayCOIN_START = async (sender_psid) => {
+    let response1;
+    let randString = Math.floor(Math.random() * 2) === 0? 'Sấp' : 'Ngửa';
+    response1 = {"text": `Mitoo tung được mặt ${randString} nè!`};
+    await callSendAPI(sender_psid, response);
+    await callSendAPI(sender_psid, {
+        "text": 'Bạn có muốn tiếp tục tung đồng xu không?'
+    });
+
+}
+
 const getMainMenuTemplate = () => {
     return {
         "attachment": {
@@ -116,7 +127,7 @@ const getStartTemplate = () => {
                 "elements": [
                     {
                         "title": "Tung đồng xu",
-                        "subtitle": "Mitoo sẽ giúp bạn tung một đồng xu xem nó là mặt úp hay ngửa nhé!",
+                        "subtitle": "Mitoo sẽ giúp bạn tung một đồng xu xem nó là mặt sấp hay ngửa nhé!",
                         "image_url": "https://picsum.photos/id/102/300/400",
                         "buttons": [
                             {
@@ -159,5 +170,6 @@ const getStartTemplate = () => {
 module.exports = {
     replayGET_STARTED,
     replaySTART,
-    replayMAIN_MENU
+    replayMAIN_MENU,
+    replayCOIN_START
 }

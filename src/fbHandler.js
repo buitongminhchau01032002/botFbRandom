@@ -1,6 +1,6 @@
 require('dotenv').config();
 const request = require('request')
-const { replayGET_STARTED, replayMAIN_MENU, replaySTART } = require('./replayHandler/postBackReplay')
+const sendMess = require('./replayHandler/postBackReplay')
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 // Handles messages events
@@ -55,14 +55,16 @@ function handlePostback(sender_psid, received_postback) {
     // Set the response based on the postback payload
     switch (payload) {
         case 'GET_STARTED':
-            replayGET_STARTED(sender_psid);
+            sendMess.replayGET_STARTED(sender_psid);
             break;
         case 'MAIN_MENU':
-            replayMAIN_MENU(sender_psid);
+            sendMess.replayMAIN_MENU(sender_psid);
             break;
         case 'START':
-            replaySTART(sender_psid);
+            sendMess.replaySTART(sender_psid);
             break;
+        case 'COIN_START':
+            sendMess.replayCOIN_START(sender_psid);
         default:
             response = { "text": "Ôoo! Mitoo không hiểu được tin nhắn của bạn" }
     }
