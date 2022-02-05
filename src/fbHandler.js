@@ -16,6 +16,9 @@ const handleQuickReply = (sender_psid, received_message) => {
         case 'COIN_START':
             sendMess.replyCOIN_START(sender_psid);
             break;
+        case 'DICE_1':
+            sendMess.replyDICE_FINISH(sender_psid, 1);
+            break;
         default:
             console.log('Incorrect quick reply');
     }
@@ -40,9 +43,7 @@ function handlePostback(sender_psid, received_postback) {
         case 'DICE_START':
             sendMess.replyDICE_START(sender_psid);
             break;
-        case 'DICE_1':
-            sendMess.replyDICE_FINISH(sender_psid, 1);
-            break;
+
         default:
             console.log('Incorrect post back');
     }

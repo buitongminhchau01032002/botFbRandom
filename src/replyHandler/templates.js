@@ -128,11 +128,11 @@ function contiDice (quantity) {
 
 function diceNum() {
     return {
-        "text": "Bạn cần tung bao nhiêu con xúc xắc nà!",
+        "text": "Bạn cần tung bao nhiêu viên xúc xắc nà!",
         "quick_replies": [
             {
                 "content_type": "text",
-                "title": "1",
+                "title": "1 viên",
                 "payload": "DICE_1",
             }
         ]
