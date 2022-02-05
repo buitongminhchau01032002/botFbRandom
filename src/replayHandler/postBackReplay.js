@@ -55,7 +55,7 @@ const replayGET_STARTED = async (sender_psid) => {
     let response1;
     let profile = await getProfile(sender_psid);
     response1 = { "text": `Xin chào ${profile.last_name} ${profile.first_name}, mình là Mitoo` };
-    let response2 = template.getMainMenuTemplate();
+    let response2 = templates.getMainMenuTemplate();
     await callSendAPI(sender_psid, response1);
     await callSendAPI(sender_psid, response2);
 }
