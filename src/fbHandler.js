@@ -64,7 +64,7 @@ function handlePostback(sender_psid, received_postback) {
             sendMess.replySTART(sender_psid);
             break;
         case 'COIN_START':
-            sendMess.replyCOIN_START(sender_psid);ư
+            sendMess.replyCOIN_START(sender_psid);
             break;
         default:
             response = { "text": "Ôoo! Mitoo không hiểu được tin nhắn của bạn" }
