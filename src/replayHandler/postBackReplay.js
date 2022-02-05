@@ -1,5 +1,5 @@
 const request = require('request');
-const template = require('../templates');
+const templates = require('../templates');
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 
@@ -61,13 +61,13 @@ const replayGET_STARTED = async (sender_psid) => {
 }
 
 const replayMAIN_MENU = async (sender_psid) => {
-    let response = template.getMainMenuTemplate();
+    let response = templates.getMainMenuTemplate();
     await callSendAPI(sender_psid, response);
 }
 
 
 const replaySTART = async (sender_psid) => {
-    let response = template.getStartTemplate();
+    let response = templates.getStartTemplate();
     await callSendAPI(sender_psid, response);
 }
 
