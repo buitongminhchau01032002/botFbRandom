@@ -53,6 +53,7 @@ const getProfile = (sender_psid) => {
             console.error("get profile error: " + err);
         }
     });
+    console.log(profile);
 
     return profile;
 }
