@@ -114,7 +114,8 @@ const replyCOIN_START = async (sender_psid) => {
                 "title": "Tiếp tục",
                 "payload": "COIN_START",
                 "image_url": "http://example.com/img/red.png"
-            }, {
+            },
+            {
                 "content_type": "text",
                 "title": "Quay lại",
                 "payload": "START",
