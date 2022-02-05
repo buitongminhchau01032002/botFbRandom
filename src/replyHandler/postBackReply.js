@@ -149,6 +149,21 @@ const replyCHOOSE_START = async (sender_psid) => {
     console.log(stateChoose)
 }
 
+const replyAddChoose = async (sender_psid, received_message) => {
+    let listChoose = [];
+    sendMess.stateChoose.forEach((item, index) => {
+        if (item.id === sender_psid) {
+            stateChoose[index].listChoose.push(received_message.text);
+            listChoose = stateChoose[index].listChoose;
+        }
+    })
+    let stringList = listChoose.reduce((str, cur) => str + `  -"${cur}" \n`, '')
+    let response = {"text": "Các lựa chọn \n" + stringList};
+    await callSendAPI(sender_psid, response);
+    await sendQuickReply(sender_psid, templates.chooseTyping());
+
+}
+
 const replyCHOOSE_SUBMIT = async (sender_psid) => {
 
     await sendQuickReply(sender_psid, templates.contiChoose());
@@ -156,6 +171,7 @@ const replyCHOOSE_SUBMIT = async (sender_psid) => {
 }
 
 module.exports = {
+    stateChoose,
     replyGET_STARTED,
     replySTART,
     replyMAIN_MENU,
@@ -163,5 +179,6 @@ module.exports = {
     replyDICE_START,
     replyDICE_FINISH,
     replyCHOOSE_START,
-    replyCHOOSE_SUBMIT
+    replyCHOOSE_SUBMIT,
+    replyAddChoose
 }

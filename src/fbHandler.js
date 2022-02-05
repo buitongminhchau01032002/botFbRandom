@@ -4,7 +4,18 @@ const sendMess = require('./replyHandler/postBackReply');
 function handleMessage(sender_psid, received_message) {
     if (received_message.quick_reply) {
         handleQuickReply(sender_psid, received_message);
+    } else {
+        let indexUser = -1;
+        sendMess.stateChoose.forEach((item, index) => {
+            if (item.id === sender_psid) {
+                indexUser = index;
+            }
+        })
+        if (indexUser !== -1) {
+            sendMess.replyAddChoose(sender_psid, received_message)
+        }
     }
+    
 }
 
 const handleQuickReply = (sender_psid, received_message) => {
