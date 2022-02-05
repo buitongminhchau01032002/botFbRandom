@@ -69,28 +69,52 @@ const getMainMenu = () => {
             "type": "template",
             "payload": {
                 "template_type": "generic",
-                "elements": [{
-                    "title": "Mình là Mitoo",
-                    "subtitle": "Bạn có thể trò chuyện với Mitoo bằng một số lựa chọn bên dưới",
-                    "image_url":"https://picsum.photos/id/102/300/400",
-                    "buttons": [
-                        {
-                            "type": "postback",
-                            "title": "Mitoo là ai?",
-                            "payload": "ABOUT",
-                        },
-                        {
-                            "type": "postback",
-                            "title": "Bắt đầu ngay",
-                            "payload": "START",
-                        },
-                        {
-                            "type": "postback",
-                            "title": "Góp ý cho Mitoo",
-                            "payload": "FEED_BACK",
-                        }
-                    ],
-                }]
+                "elements": [
+                    {
+                        "title": "Mình là Mitoo",
+                        "subtitle": "Bạn có thể trò chuyện với Mitoo bằng một số lựa chọn bên dưới",
+                        "image_url": "https://picsum.photos/id/102/300/400",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Mitoo là ai?",
+                                "payload": "ABOUT",
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Bắt đầu ngay",
+                                "payload": "START",
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Góp ý cho Mitoo",
+                                "payload": "FEED_BACK",
+                            }
+                        ],
+                    },
+                    {
+                        "title": "Mình là Mitoo",
+                        "subtitle": "Bạn có thể trò chuyện với Mitoo bằng một số lựa chọn bên dưới",
+                        "image_url": "https://picsum.photos/id/102/300/400",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Mitoo là ai?",
+                                "payload": "ABOUT",
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Bắt đầu ngay",
+                                "payload": "START",
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Góp ý cho Mitoo",
+                                "payload": "FEED_BACK",
+                            }
+                        ],
+                    }
+                ]
             }
         }
     }
