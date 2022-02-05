@@ -54,13 +54,11 @@ function handlePostback(sender_psid, received_postback) {
     // Set the response based on the postback payload
     switch (payload) {
         case 'GET_STARTED':
-            replayGET_STARTED(sender_psid);
+            replayGET_STARTED(sender_psid)
             break;
         default:
             response = {"text": "Ôoo! Mitoo không hiểu được tin nhắn của bạn"}
     }
-    // Send the message to acknowledge the postback
-    callSendAPI(sender_psid, response);
 }
 
 // Sends response messages via the Send API
