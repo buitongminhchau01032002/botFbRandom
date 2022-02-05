@@ -27,9 +27,9 @@ function callSendAPI(sender_psid, response) {
     });
 }
 
-const replayGET_STARTED = (sender_psid) => {
+const replayGET_STARTED = async (sender_psid) => {
     let response1;
-    let profile = getProfile(sender_psid);
+    let profile = await getProfile(sender_psid);
     response1 = { "text": `Xin chào ${profile.first_name} ${profile.last_name}, mình là Mitoo` };
     callSendAPI(sender_psid, response1);
 }
@@ -37,25 +37,22 @@ const replayGET_STARTED = (sender_psid) => {
 
 
 const getProfile = (sender_psid) => {
-
-    let profile = {};
-
-    // Send the HTTP request to the Messenger Platform
-    request({
-        "uri": `https://graph.facebook.com/${sender_psid}?fields=first_name,last_name&access_token=${PAGE_ACCESS_TOKEN}`,
-        "method": "GET",
-    }, (err, res, body) => {
-        if (!err) {
-            console.log('get profile done');
-            console.log(body);
-            profile = JSON.parse(body);
-        } else {
-            console.error("get profile error: " + err);
-        }
-    });
-
-    console.log(profile);
-    return profile;
+    return new Promise((resolve,reject) => {
+        request({
+            "uri": `https://graph.facebook.com/${sender_psid}?fields=first_name,last_name&access_token=${PAGE_ACCESS_TOKEN}`,
+            "method": "GET",
+        }, (err, res, body) => {
+            if (!err) {
+                console.log('get profile done');
+                profile = JSON.parse(body);
+                console(profile);
+                return resolve(profile);
+            } else {
+                console.error("get profile error: " + err);
+                return reject(error);
+            }
+        });
+    })
 }
 
 
