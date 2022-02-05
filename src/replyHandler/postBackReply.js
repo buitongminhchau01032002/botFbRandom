@@ -105,18 +105,18 @@ const replyCOIN_START = async (sender_psid) => {
     let response1;
     let randString = Math.floor(Math.random() * 2) === 0 ? 'Sấp' : 'Ngửa';
     response1 = { "text": `Mitoo tung được mặt ${randString} nè!` };
-    await callSendAPI(sender_psid, response1);
+    await callSendAPI(sender_psid, response1);git
     await sendQuickReply(sender_psid, {
         "text": "Bạn có muốn tiếp tục tung đồng xu không?",
         "quick_replies": [
             {
                 "content_type": "text",
-                "title": "Red",
+                "title": "Tiếp tục",
                 "payload": "COIN_START",
                 "image_url": "http://example.com/img/red.png"
             }, {
                 "content_type": "text",
-                "title": "Green",
+                "title": "Quay lại",
                 "payload": "START",
                 "image_url": "http://example.com/img/green.png"
             }
