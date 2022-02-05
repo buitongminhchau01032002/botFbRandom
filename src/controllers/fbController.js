@@ -44,6 +44,7 @@ const postWebhook = (req, res) => {
         body.entry.forEach(function (entry) {
 
             // Gets the body of the webhook event
+            console.log("entry: " + entry)
             let webhook_event = entry.messaging[0];
             console.log(webhook_event);
 
@@ -59,7 +60,6 @@ const postWebhook = (req, res) => {
             } else if (webhook_event.postback) {
                 handlePostback(sender_psid, webhook_event.postback);
             }
-
         });
 
         // Return a '200 OK' response to all events
