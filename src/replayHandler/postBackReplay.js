@@ -1,5 +1,4 @@
 const request = require('request');
-const {getStartTemplate, getMainMenuTemplate} = require('../templates');
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 
@@ -72,7 +71,91 @@ const replaySTART = async (sender_psid) => {
 }
 
 
+const getMainMenuTemplate = () => {
+    return {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [
+                    {
+                        "title": "Mình là Mitoo",
+                        "subtitle": "Bạn có thể trò chuyện với Mitoo bằng một số lựa chọn bên dưới",
+                        "image_url": "https://picsum.photos/id/102/300/400",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Mitoo là ai?",
+                                "payload": "ABOUT",
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Bắt đầu ngay",
+                                "payload": "START",
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Góp ý cho Mitoo",
+                                "payload": "FEED_BACK",
+                            }
+                        ],
+                    }
 
+                ]
+            }
+        }
+    }
+}
+
+const getStartTemplate = () => {
+    return {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [
+                    {
+                        "title": "Tung đồng xu",
+                        "subtitle": "Mitoo sẽ giúp bạn tung một đồng xu xem nó là mặt úp hay ngửa nhé!",
+                        "image_url": "https://picsum.photos/id/102/300/400",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Tung đồng xu",
+                                "payload": "COIN_START",
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Quay xúc xắc",
+                        "subtitle": "Mitoo sẽ giúp bạn quay một con xúc xắc",
+                        "image_url": "https://picsum.photos/id/102/300/400",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Tung đồng xu",
+                                "payload": "COIN_START",
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Quay lại",
+                        "subtitle": "Quay lại màn hình chính",
+                        "image_url": "https://picsum.photos/id/102/300/400",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Quay lại",
+                                "payload": "MAIN_MENU",
+                            }
+                        ]
+                    }
+
+                ]
+            }
+        }
+    }
+}
 module.exports = {
     replayGET_STARTED,
     replaySTART,
