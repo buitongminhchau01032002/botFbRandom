@@ -106,25 +106,22 @@ const replyCOIN_START = async (sender_psid) => {
     let randString = Math.floor(Math.random() * 2) === 0 ? 'Sấp' : 'Ngửa';
     response1 = { "text": `Mitoo tung được mặt ${randString} nè!` };
     await callSendAPI(sender_psid, response1);
-    // await callSendAPI(sender_psid, {
-    //     "text": 'Bạn có muốn tiếp tục tung đồng xu không?'
-    // });
-    // await sendQuickReply(sender_psid, {
-    //     "text": "Bạn có muốn tiếp tục tung đồng xu không?",
-    //     "quick_replies": [
-    //         {
-    //             "content_type": "text",
-    //             "title": "Red",
-    //             "payload": "COIN_START",
-    //             "image_url": "http://example.com/img/red.png"
-    //         }, {
-    //             "content_type": "text",
-    //             "title": "Green",
-    //             "payload": "START",
-    //             "image_url": "http://example.com/img/green.png"
-    //         }
-    //     ]
-    // })
+    await sendQuickReply(sender_psid, {
+        "text": "Bạn có muốn tiếp tục tung đồng xu không?",
+        "quick_replies": [
+            {
+                "content_type": "text",
+                "title": "Red",
+                "payload": "COIN_START",
+                "image_url": "http://example.com/img/red.png"
+            }, {
+                "content_type": "text",
+                "title": "Green",
+                "payload": "START",
+                "image_url": "http://example.com/img/green.png"
+            }
+        ]
+    })
 }
 
 const getMainMenuTemplate = () => {
