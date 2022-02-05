@@ -46,7 +46,7 @@ const start = () => {
                     {
                         "title": "Tung đồng xu",
                         "subtitle": `${BOT} sẽ giúp bạn tung một đồng xu xem nó là mặt sấp hay ngửa nhé!`,
-                        "image_url": "https://picsum.photos/id/102/300/400",
+                        "image_url": "https://i.ibb.co/H4p9Fcf/coin-toss.png",
                         "buttons": [
                             {
                                 "type": "postback",
