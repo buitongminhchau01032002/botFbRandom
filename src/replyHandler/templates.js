@@ -106,8 +106,63 @@ function contiCoin() {
     }
 }
 
+function contiDice (quantity) {
+    return {
+        "text": `Bạn có muốn tiếp tục ${quantity} xúc xắc không?`,
+        "quick_replies": [
+            {
+                "content_type": "text",
+                "title": "Tiếp tục",
+                "payload": `DICE_${quantity}`,
+                "image_url": "http://example.com/img/red.png"
+            },
+            {
+                "content_type": "text",
+                "title": "Quay lại",
+                "payload": "START",
+                "image_url": "http://example.com/img/green.png"
+            }
+        ]
+    }
+}
+
+function diceNum() {
+    return {
+        "text": "Bạn cần tung bao nhiêu con xúc xắc nà!",
+        "quick_replies": [
+            {
+                "content_type": "text",
+                "title": "1",
+                "payload": "DICE_1",
+            }
+        ]
+    }
+}
+
+function imgDice(num) {
+    const listLink = [
+        'https://i.ibb.co/YyQ7sw9/dice1.png',
+        'https://i.ibb.co/P9crvqJ/dice2.png',
+        'https://i.ibb.co/7275g69/dice3.png',
+        'https://i.ibb.co/RjCwK6J/dice4.png',
+        'https://i.ibb.co/9nnwmHD/dice5.png',
+        'https://i.ibb.co/PjxzcL0/dice6.png'
+    ]
+    return {
+        "attachment": {
+            "type": "image",
+            "payload": {
+                "url": `${listLink[num - 1]}`
+            }
+        }
+    }
+}
+
 module.exports = {
     mainMenu,
     start,
-    contiCoin
+    contiCoin,
+    diceNum,
+    imgDice,
+    contiDice
 }

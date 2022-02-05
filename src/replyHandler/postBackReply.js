@@ -103,6 +103,9 @@ const replySTART = async (sender_psid) => {
 
 
 const replyCOIN_START = async (sender_psid) => {
+
+    // Thêm ảnh
+
     let response1;
     let randString = Math.floor(Math.random() * 2) === 0 ? 'sấp' : 'ngửa';
     response1 = { "text": `${BOT} tung được mặt "${randString}" nè!` };
@@ -110,10 +113,29 @@ const replyCOIN_START = async (sender_psid) => {
     await sendQuickReply(sender_psid, templates.contiCoin());
 }
 
+const replyDICE_START = async (sender_psid) => {
+    await sendQuickReply(sender_psid, templates.diceNum());
+}
 
+const replyDICE_FINISH = async (sender_psid, quantity) => {
+
+    let num = [];
+    for (let i = 0; i < quantity; i++) {
+        num.push(Math.floor(Math.random() * 6) + 1);
+    }
+
+    for (let i = 0; i < quantity; i++) {
+        let imgResponse = templates.imgDice(num[i]);
+        await callSendAPI(sender_psid, imgResponse);
+    }
+    
+    await sendQuickReply(sender_psid, templates.contiCoin(quantity));
+}
 module.exports = {
     replyGET_STARTED,
     replySTART,
     replyMAIN_MENU,
-    replyCOIN_START
+    replyCOIN_START,
+    replyDICE_START,
+    replyDICE_FINISH
 }
