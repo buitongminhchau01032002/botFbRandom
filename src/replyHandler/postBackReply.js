@@ -3,7 +3,7 @@ const templates = require('./templates');
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 const BOT = 'Mitoo'
 
-let state = []
+let stateChoose = []
 
 // Sends response messages via the Send API
 function callSendAPI(sender_psid, response) {
@@ -139,15 +139,12 @@ const replyDICE_FINISH = async (sender_psid, quantity) => {
     await sendQuickReply(sender_psid, templates.contiDice(quantity));
 }
 
-const replyCHOOSE_START = async (sender_psid, quantity) => {
-    let response = {
-        "text": "Bạn chưa thêm lựa chọn nào",
-        "is_echo":true,
-        "metadata": "CHOOSE_METADATA",
-    };
-    await callSendAPI(sender_psid, response);
-    state.push(1);
-    console.log(state)
+const replyCHOOSE_START = async (sender_psid) => {
+    await sendQuickReply(sender_psid, templates.chooseTyping());
+    stateChoose.push({
+        id: sender_psid,
+        listChoose: []
+    })
 }
 
 
