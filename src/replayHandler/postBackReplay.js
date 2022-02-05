@@ -36,12 +36,12 @@ const replayGET_STARTED = (sender_psid) => {
 
 
 
-const getProfile = (sender_psid) => {
+const getProfile = async (sender_psid) => {
 
     let profile = {};
 
     // Send the HTTP request to the Messenger Platform
-    request({
+    await request({
         "uri": `https://graph.facebook.com/${sender_psid}?fields=first_name,last_name&access_token=${PAGE_ACCESS_TOKEN}`,
         "method": "GET",
     }, (err, res, body) => {
@@ -49,12 +49,13 @@ const getProfile = (sender_psid) => {
             console.log('get profile done');
             console.log(body);
             profile = JSON.parse(body);
-            console.log(profile);
-            return profile;
         } else {
             console.error("get profile error: " + err);
         }
     });
+
+    console.log(profile);
+    return profile;
 }
 
 
