@@ -107,7 +107,7 @@ const replyCOIN_START = async (sender_psid) => {
     let randString = Math.floor(Math.random() * 2) === 0 ? 'sấp' : 'ngửa';
     response1 = { "text": `${BOT} tung được mặt "${randString}" nè!` };
     await callSendAPI(sender_psid, response1);
-    await sendQuickReply(sender_psid, templates.contiCoin);
+    await sendQuickReply(sender_psid, templates.contiCoin());
 }
 
 

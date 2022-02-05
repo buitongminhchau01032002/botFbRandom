@@ -56,14 +56,14 @@ const start = () => {
                         ]
                     },
                     {
-                        "title": "Quay xúc xắc",
+                        "title": "Tung xúc xắc",
                         "subtitle": `${BOT} sẽ giúp bạn quay một con xúc xắc`,
                         "image_url": "https://i.ibb.co/RDtHyb8/3d-render-falling-casino-dice-icon-illustration-design-460848-1142.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "Tung đồng xu",
-                                "payload": "COIN_START",
+                                "title": "Tung xúc xắc",
+                                "payload": "DICE_START",
                             }
                         ]
                     },
