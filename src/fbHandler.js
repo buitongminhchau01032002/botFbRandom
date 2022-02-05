@@ -25,6 +25,9 @@ const handleQuickReply = (sender_psid, received_message) => {
         case 'DICE_3':
             sendMess.replyDICE_FINISH(sender_psid, 3);
             break;
+        case 'CHOOSE_SUBMIT':
+            sendMess.replyCHOOSE_SUBMIT(sender_psid);
+            break;
         default:
             console.log('Incorrect quick reply');
     }

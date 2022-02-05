@@ -140,6 +140,7 @@ const replyDICE_FINISH = async (sender_psid, quantity) => {
 }
 
 const replyCHOOSE_START = async (sender_psid) => {
+    stateChoose = stateChoose.filter(item => item.id !== sender_psid);
     await sendQuickReply(sender_psid, templates.chooseTyping());
     stateChoose.push({
         id: sender_psid,
@@ -148,6 +149,11 @@ const replyCHOOSE_START = async (sender_psid) => {
     console.log(stateChoose)
 }
 
+const replyCHOOSE_SUBMIT = async (sender_psid) => {
+
+    await sendQuickReply(sender_psid, templates.contiChoose());
+
+}
 
 module.exports = {
     replyGET_STARTED,
@@ -156,5 +162,6 @@ module.exports = {
     replyCOIN_START,
     replyDICE_START,
     replyDICE_FINISH,
-    replyCHOOSE_START
+    replyCHOOSE_START,
+    replyCHOOSE_SUBMIT
 }

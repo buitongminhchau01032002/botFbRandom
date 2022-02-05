@@ -182,17 +182,37 @@ function imgDice(num) {
 
 function chooseTyping() {
     return {
-        "text": `Bạn hãy gửi từng lựa chọn cho ${BOT}. Khi nào xong thì nhấn "OK" để ${BOT} chọn giúp bạn nhé!`,
+        "text": `Bạn hãy gửi từng lựa chọn cho ${BOT}. Khi nào xong thì nhấn "Hoàn thành" ${BOT} nhé!`,
         "quick_replies": [
             {
                 "content_type": "text",
-                "title": "OK",
+                "title": "Hoàn thành",
                 "payload": "CHOOSE_SUBMIT",
             },
             {
                 "content_type": "text",
                 "title": "Huỷ",
                 "payload": "START",
+            }
+        ]
+    }
+}
+
+function contiChoose (quantity) {
+    return {
+        "text": `Bạn có muốn tiếp tục không?`,
+        "quick_replies": [
+            {
+                "content_type": "text",
+                "title": "Tiếp tục",
+                "payload": `CHOOSE_START`,
+                "image_url": "http://example.com/img/red.png"
+            },
+            {
+                "content_type": "text",
+                "title": "Quay lại",
+                "payload": "START",
+                "image_url": "http://example.com/img/green.png"
             }
         ]
     }
@@ -205,5 +225,6 @@ module.exports = {
     diceNum,
     imgDice,
     contiDice,
-    chooseTyping
+    chooseTyping,
+    contiChoose
 }
