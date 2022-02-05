@@ -3,7 +3,6 @@ const templates = require('./templates');
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 const BOT = 'Mitoo'
 
-
 // Sends response messages via the Send API
 function callSendAPI(sender_psid, response) {
     return new Promise((resolve, reject) => {

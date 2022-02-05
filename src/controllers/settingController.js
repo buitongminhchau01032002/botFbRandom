@@ -24,7 +24,7 @@ const getstartedButtonController = (req, res) => {
         }
     });
 
-    return res.send('create get started btn action');
+    res.send('create get started btn action');
 }
 
 module.exports = {

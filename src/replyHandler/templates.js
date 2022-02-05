@@ -58,7 +58,7 @@ const start = () => {
                     {
                         "title": "Quay xúc xắc",
                         "subtitle": `${BOT} sẽ giúp bạn quay một con xúc xắc`,
-                        "image_url": "https://picsum.photos/id/102/300/400",
+                        "image_url": "https://i.ibb.co/RDtHyb8/3d-render-falling-casino-dice-icon-illustration-design-460848-1142.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
