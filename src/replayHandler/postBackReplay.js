@@ -45,7 +45,7 @@ const getProfile = (sender_psid) => {
             if (!err) {
                 console.log('get profile done');
                 profile = JSON.parse(body);
-                console(profile);
+                console.log(profile);
                 return resolve(profile);
             } else {
                 console.error("get profile error: " + err);
