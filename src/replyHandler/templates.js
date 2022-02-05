@@ -108,7 +108,7 @@ function contiCoin() {
 
 function contiDice (quantity) {
     return {
-        "text": `Bạn có muốn tiếp tục ${quantity} xúc xắc không?`,
+        "text": `Bạn có muốn tiếp tục tung ${quantity} viên xúc xắc không?`,
         "quick_replies": [
             {
                 "content_type": "text",

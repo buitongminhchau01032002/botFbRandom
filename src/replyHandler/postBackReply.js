@@ -128,8 +128,13 @@ const replyDICE_FINISH = async (sender_psid, quantity) => {
         let imgResponse = templates.imgDice(num[i]);
         await callSendAPI(sender_psid, imgResponse);
     }
-    
-    await sendQuickReply(sender_psid, templates.contiCoin(quantity));
+    let responseString = `${BOT} tung được "${num[0]}"`;
+    for (let i = 1; i < quantity; i++) {
+        responseString += `, "${num[i]}" `;
+    }
+    responseString += "nè!"
+    await callSendAPI(sender_psid, {text: responseString});
+    await sendQuickReply(sender_psid, templates.contiDice(quantity));
 }
 module.exports = {
     replyGET_STARTED,
