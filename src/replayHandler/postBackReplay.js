@@ -1,5 +1,5 @@
 const request = require('request');
-const templates = require('../templates');
+const {getStartTemplate, getMainMenuTemplate} = require('../templates');
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 
@@ -55,19 +55,19 @@ const replayGET_STARTED = async (sender_psid) => {
     let response1;
     let profile = await getProfile(sender_psid);
     response1 = { "text": `Xin chào ${profile.last_name} ${profile.first_name}, mình là Mitoo` };
-    let response2 = templates.getMainMenuTemplate();
+    let response2 = getMainMenuTemplate();
     await callSendAPI(sender_psid, response1);
     await callSendAPI(sender_psid, response2);
 }
 
 const replayMAIN_MENU = async (sender_psid) => {
-    let response = templates.getMainMenuTemplate();
+    let response = getMainMenuTemplate();
     await callSendAPI(sender_psid, response);
 }
 
 
 const replaySTART = async (sender_psid) => {
-    let response = templates.getStartTemplate();
+    let response = getStartTemplate();
     await callSendAPI(sender_psid, response);
 }
 
