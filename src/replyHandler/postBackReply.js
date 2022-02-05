@@ -133,14 +133,27 @@ const replyDICE_FINISH = async (sender_psid, quantity) => {
         responseString += `, "${num[i]}" `;
     }
     responseString += (quantity === 1 ? " nè!" : "nè!");
-    await callSendAPI(sender_psid, {text: responseString});
+    await callSendAPI(sender_psid, { text: responseString });
     await sendQuickReply(sender_psid, templates.contiDice(quantity));
 }
+
+const replyCHOOSE_START = async (sender_psid, quantity) => {
+    let response = {
+        "text": "Bạn chưa thêm lựa chọn nào",
+        "is_echo":true,
+        "metadata": "CHOOSE_METADATA",
+    };
+    await callSendAPI(sender_psid, response);
+
+}
+
+
 module.exports = {
     replyGET_STARTED,
     replySTART,
     replyMAIN_MENU,
     replyCOIN_START,
     replyDICE_START,
-    replyDICE_FINISH
+    replyDICE_FINISH,
+    replyCHOOSE_START
 }

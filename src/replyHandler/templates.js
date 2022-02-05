@@ -44,6 +44,18 @@ const start = () => {
                 "template_type": "generic",
                 "elements": [
                     {
+                        "title": "Lựa chọn",
+                        "subtitle": `Bạn có đang phân vân giữa các lựa chọn không? ${BOT} sẽ giúp bạn chọn ra một trong số đó nhé`,
+                        "image_url": "https://i.ibb.co/RDtHyb8/3d-render-falling-casino-dice-icon-illustration-design-460848-1142.jpg",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Bắt đầu",
+                                "payload": "CHOOSE_START",
+                            }
+                        ]
+                    },
+                    {
                         "title": "Tung đồng xu",
                         "subtitle": `${BOT} sẽ giúp bạn tung một đồng xu xem nó là mặt sấp hay ngửa nhé!`,
                         "image_url": "https://i.ibb.co/WtVGNcW/coin-toss.png",
@@ -137,12 +149,12 @@ function diceNum() {
             },
             {
                 "content_type": "text",
-                "title": "1 viên",
+                "title": "2 viên",
                 "payload": "DICE_2",
             },
             {
                 "content_type": "text",
-                "title": "1 viên",
+                "title": "3 viên",
                 "payload": "DICE_3",
             }
         ]
@@ -168,11 +180,30 @@ function imgDice(num) {
     }
 }
 
+function chooseTyping() {
+    return {
+        "text": `Bạn hãy gửi từng lựa chọn cho ${BOT}. Khi nào xong thì nhấn "OK" để ${BOT} chọn giúp bạn nhé!`,
+        "quick_replies": [
+            {
+                "content_type": "text",
+                "title": "OK",
+                "payload": "CHOOSE_SUBMIT",
+            },
+            {
+                "content_type": "text",
+                "title": "Huỷ",
+                "payload": "START",
+            }
+        ]
+    }
+}
+
 module.exports = {
     mainMenu,
     start,
     contiCoin,
     diceNum,
     imgDice,
-    contiDice
+    contiDice,
+    chooseTyping
 }

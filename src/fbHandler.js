@@ -5,6 +5,7 @@ function handleMessage(sender_psid, received_message) {
     if (received_message.quick_reply) {
         handleQuickReply(sender_psid, received_message);
     }
+    console.log(received_message);
 }
 
 const handleQuickReply = (sender_psid, received_message) => {
@@ -49,7 +50,9 @@ function handlePostback(sender_psid, received_postback) {
         case 'DICE_START':
             sendMess.replyDICE_START(sender_psid);
             break;
-
+        case 'CHOOSE_START':
+            sendMess.replyCHOOSE_START(sender_psid);
+            break;
         default:
             console.log('Incorrect post back');
     }
