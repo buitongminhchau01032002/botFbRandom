@@ -5,7 +5,7 @@ function handleMessage(sender_psid, received_message) {
     if (received_message.quick_reply) {
         handleQuickReply(sender_psid, received_message);
     }
-    console.log(received_message);
+    console.log("metadata: " + received_message.metadata);
 }
 
 const handleQuickReply = (sender_psid, received_message) => {
