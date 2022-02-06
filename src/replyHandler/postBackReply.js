@@ -157,7 +157,25 @@ const replyAddChoose = async (sender_psid, received_message) => {
 const replyCHOOSE_SUBMIT = async (sender_psid) => {
 
     // Add logic
+
+    if (stateChoose[sender_psid].length === 0) {
+        await callSendAPI(sender_psid, {
+            text: `Bạn chưa gửi cho ${BOT} lựa chọn nào cả 😭`
+        });
+    } else if (stateChoose[sender_psid].length === 1) {
+        await callSendAPI(sender_psid, {
+            text: `Bạn chỉ có một lựa chọn thôi 😂, đó là: \n 👉 ${stateChoose[sender_psid][0]}`
+        });
+    } else {
+        let rand = Math.floor(Math.random() * (stateChoose[sender_psid].length));
+        let str = stateChoose[sender_psid][rand];
+        await callSendAPI(sender_psid, {
+            text: `${BOT} chọn được rồi nè 😊, đó là: \n 👉 str`
+        });
+    }
+
     await sendQuickReply(sender_psid, templates.contiChoose());
+    stateChoose[sender_psid] = [];
 
 }
 
