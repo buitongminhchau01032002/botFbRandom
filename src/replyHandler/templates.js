@@ -106,13 +106,13 @@ function contiCoin() {
                 "content_type": "text",
                 "title": "Tiếp tục",
                 "payload": "COIN_START",
-                "image_url": "https://i.ibb.co/TYRxHf4/add.png"
+                "image_url": "https://i.ibb.co/HYpxVpj/add.png"
             },
             {
                 "content_type": "text",
                 "title": "Quay lại",
                 "payload": "START",
-                "image_url": "https://i.ibb.co/TY4Z4kP/previous.png"
+                "image_url": "https://i.ibb.co/qm8TLbp/back.png"
             }
         ]
     }
@@ -126,13 +126,13 @@ function contiDice (quantity) {
                 "content_type": "text",
                 "title": "Tiếp tục",
                 "payload": `DICE_${quantity}`,
-                "image_url": "https://i.ibb.co/TYRxHf4/add.png"
+                "image_url": "https://i.ibb.co/HYpxVpj/add.png"
             },
             {
                 "content_type": "text",
                 "title": "Quay lại",
                 "payload": "START",
-                "image_url": "https://i.ibb.co/TY4Z4kP/previous.png"
+                "image_url": "https://i.ibb.co/qm8TLbp/back.png"
             }
         ]
     }
@@ -188,13 +188,13 @@ function chooseTyping() {
                 "content_type": "text",
                 "title": "Hoàn thành",
                 "payload": "CHOOSE_SUBMIT",
-                "image_url": "https://i.ibb.co/C6ty3yL/accept.png"
+                "image_url": "https://i.ibb.co/fCD7jrh/accept.png"
             },
             {
                 "content_type": "text",
                 "title": "Huỷ",
                 "payload": "START",
-                "image_url": "https://i.ibb.co/2Fs6085/cancel.png"
+                "image_url": "https://i.ibb.co/Y8J90Ky/cancel.png"
             }
         ]
     }
@@ -208,23 +208,23 @@ function contiChoose (quantity) {
                 "content_type": "text",
                 "title": "Tiếp tục",
                 "payload": `CHOOSE_START`,
-                "image_url": "https://i.ibb.co/TYRxHf4/add.png"
+                "image_url": "https://i.ibb.co/HYpxVpj/add.png"
             },
             {
                 "content_type": "text",
                 "title": "Quay lại",
                 "payload": "START",
-                "image_url": 'https://i.ibb.co/TY4Z4kP/previous.png'
+                "image_url": 'https://i.ibb.co/qm8TLbp/back.png'
             }
         ]
     }
 }
 
 
-// https://i.ibb.co/TY4Z4kP/previous.png
-// https://i.ibb.co/TYRxHf4/add.png
-// https://i.ibb.co/2Fs6085/cancel.png
-// https://i.ibb.co/C6ty3yL/accept.png
+// https://i.ibb.co/qm8TLbp/back.png
+// https://i.ibb.co/HYpxVpj/add.png
+// https://i.ibb.co/Y8J90Ky/cancel.png
+// https://i.ibb.co/fCD7jrh/accept.png
 
 module.exports = {
     mainMenu,
