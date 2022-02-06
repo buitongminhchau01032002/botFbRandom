@@ -10,7 +10,7 @@ const mainMenu = () => {
                     {
                         "title": `Mình là ${BOT}`,
                         "subtitle": `Bạn có thể trò chuyện với ${BOT} bằng một số lựa chọn bên dưới`,
-                        "image_url": "https://picsum.photos/id/102/300/400",
+                        "image_url": "https://i.ibb.co/n12YxDW/Mitoo.png",
                         "buttons": [
                             {
                                 "type": "postback",
