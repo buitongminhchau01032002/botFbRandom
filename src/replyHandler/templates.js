@@ -90,7 +90,7 @@ const start = () => {
                         ]
                     },
                     {
-                        "title": "Tung xúc xắc",
+                        "title": "Quay xúc xắc",
                         "subtitle": `${BOT} sẽ giúp bạn quay các con xúc xắc`,
                         "image_url": "https://i.ibb.co/RDtHyb8/3d-render-falling-casino-dice-icon-illustration-design-460848-1142.jpg",
                         "buttons": [
@@ -134,7 +134,7 @@ function contiCoin() {
 
 function contiDice (quantity) {
     return {
-        "text": `Bạn có muốn tiếp tục tung ${quantity} viên xúc xắc không?`,
+        "text": `Bạn có muốn tiếp tục quay ${quantity} viên xúc xắc không?`,
         "quick_replies": [
             {
                 "content_type": "text",

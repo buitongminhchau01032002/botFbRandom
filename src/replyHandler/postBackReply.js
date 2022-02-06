@@ -93,15 +93,15 @@ const replyGET_STARTED = async (sender_psid) => {
 
 const replyMAIN_MENU = async (sender_psid) => {
     let response = templates.mainMenu();
-    await callSendAPI(sender_psid, {
-        text: `💁‍♀️ ${BOT} có một vài chức năng để bạn sử dụng nè ^^`
-    });
     await callSendAPI(sender_psid, response);
 }
 
 
 const replySTART = async (sender_psid) => {
     let response = templates.start();
+    await callSendAPI(sender_psid, {
+        text: `💁‍♀️ ${BOT} có một vài chức năng để bạn sử dụng nè ^^`
+    });
     await callSendAPI(sender_psid, response);
     delete stateChoose[sender_psid];
 }
