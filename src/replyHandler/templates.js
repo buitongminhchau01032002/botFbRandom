@@ -58,7 +58,7 @@ const start = () => {
                     {
                         "title": "Lựa chọn",
                         "subtitle": `Bạn có đang phân vân giữa các lựa chọn không? Hãy để ${BOT} giúp bạn!`,
-                        "image_url": "https://i.ibb.co/RDtHyb8/3d-render-falling-casino-dice-icon-illustration-design-460848-1142.jpg",
+                        "image_url": "https://i.ibb.co/LCVMCwF/choose.png",
                         "buttons": [
                             {
                                 "type": "postback",
