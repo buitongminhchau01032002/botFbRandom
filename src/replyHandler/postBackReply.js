@@ -101,6 +101,7 @@ const replyMAIN_MENU = async (sender_psid) => {
 const replySTART = async (sender_psid) => {
     let response = templates.start();
     await callSendAPI(sender_psid, response);
+    delete stateChoose[sender_psid];
 }
 
 
@@ -142,7 +143,6 @@ const replyDICE_FINISH = async (sender_psid, quantity) => {
 const replyCHOOSE_START = async (sender_psid) => {
     stateChoose[sender_psid] = [];
     await sendQuickReply(sender_psid, templates.chooseTyping());
-    console.log(stateChoose)
 }
 
 const replyAddChoose = async (sender_psid, received_message) => {
@@ -151,7 +151,6 @@ const replyAddChoose = async (sender_psid, received_message) => {
     let response = { "text": "Các lựa chọn 📌: \n" + stringList };
     await callSendAPI(sender_psid, response);
     await sendQuickReply(sender_psid, templates.chooseTyping());
-    console.log(stringList)
 }
 
 const replyCHOOSE_SUBMIT = async (sender_psid) => {
@@ -175,7 +174,8 @@ const replyCHOOSE_SUBMIT = async (sender_psid) => {
     }
 
     await sendQuickReply(sender_psid, templates.contiChoose());
-    stateChoose[sender_psid] = [];
+    delete stateChoose[sender_psid];
+    
 
 }
 
