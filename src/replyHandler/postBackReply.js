@@ -204,7 +204,7 @@ const replyNONE = async (sender_psid) => {
 
 const replyUnknown = async (sender_psid) => {
 
-    await sendQuickReply(sender_psid, templates.unknown);
+    await sendQuickReply(sender_psid, templates.unknown());
 }
 
 // 0⃣1⃣2⃣3⃣4⃣5⃣6⃣7⃣8⃣9⃣
