@@ -109,10 +109,21 @@ const replySTART = async (sender_psid) => {
 
 const replyCOIN_START = async (sender_psid) => {
 
-    // Thêm ảnh
+    let rand = Math.floor(Math.random() * 2);
+
+    await callSendAPI(sender_psid, {
+        "attachment": {
+            "type": "image",
+            "payload": {
+                "url": rand === 0 ? "https://i.ibb.co/gPVxF3S/sap.png" : "https://i.ibb.co/QYgXNfB/ngua.png",
+                "is_reusable": true,
+            }
+        }
+    });
+
 
     let response1;
-    let randString = Math.floor(Math.random() * 2) === 0 ? 'sấp' : 'ngửa';
+    let randString = rand === 0 ? 'sấp' : 'ngửa';
     response1 = { "text": `${BOT} tung được mặt "${randString}" nè 😊` };
     await callSendAPI(sender_psid, response1);
     await sendQuickReply(sender_psid, templates.contiCoin());
@@ -134,9 +145,9 @@ const replyDICE_FINISH = async (sender_psid, quantity) => {
             text: toStrDice(num[i])
         });
     }
-    let responseString = `${BOT} tung được `;
+    let responseString = `${BOT} quay được `;
     for (let i = 0; i < quantity; i++) {
-        responseString += `${toSymbol(num[i]+'')} `;
+        responseString += `${toSymbol(num[i] + '')} `;
     }
     responseString += 'nè!';
     await callSendAPI(sender_psid, { text: responseString });
@@ -178,7 +189,7 @@ const replyCHOOSE_SUBMIT = async (sender_psid) => {
 
     await sendQuickReply(sender_psid, templates.contiChoose());
     delete stateChoose[sender_psid];
-    
+
 
 }
 
@@ -228,7 +239,7 @@ function toSymbol(str) {
     }
 }
 
-function toStrDice (num) {
+function toStrDice(num) {
     switch (num) {
         case 1:
             return `­\n     🔴     \n­ `
