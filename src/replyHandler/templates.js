@@ -44,7 +44,7 @@ const start = () => {
                 "template_type": "generic",
                 "elements": [
                     {
-                        "title": "🤹‍♀ Lựa chọn",
+                        "title": "Lựa chọn",
                         "subtitle": `Bạn có đang phân vân giữa các lựa chọn không? ${BOT} sẽ giúp bạn chọn ra một trong số đó nhé`,
                         "image_url": "https://i.ibb.co/RDtHyb8/3d-render-falling-casino-dice-icon-illustration-design-460848-1142.jpg",
                         "buttons": [
@@ -68,7 +68,7 @@ const start = () => {
                         ]
                     },
                     {
-                        "title": "🎲 Tung xúc xắc",
+                        "title": "Tung xúc xắc",
                         "subtitle": `${BOT} sẽ giúp bạn quay một con xúc xắc`,
                         "image_url": "https://i.ibb.co/RDtHyb8/3d-render-falling-casino-dice-icon-illustration-design-460848-1142.jpg",
                         "buttons": [
@@ -106,13 +106,13 @@ function contiCoin() {
                 "content_type": "text",
                 "title": "Tiếp tục",
                 "payload": "COIN_START",
-                "image_url": "http://example.com/img/red.png"
+                "image_url": "https://i.ibb.co/TYRxHf4/add.png"
             },
             {
                 "content_type": "text",
                 "title": "Quay lại",
                 "payload": "START",
-                "image_url": "http://example.com/img/green.png"
+                "image_url": "https://i.ibb.co/TY4Z4kP/previous.png"
             }
         ]
     }
@@ -126,13 +126,13 @@ function contiDice (quantity) {
                 "content_type": "text",
                 "title": "Tiếp tục",
                 "payload": `DICE_${quantity}`,
-                "image_url": "http://example.com/img/red.png"
+                "image_url": "https://i.ibb.co/TYRxHf4/add.png"
             },
             {
                 "content_type": "text",
                 "title": "Quay lại",
                 "payload": "START",
-                "image_url": "http://example.com/img/green.png"
+                "image_url": "https://i.ibb.co/TY4Z4kP/previous.png"
             }
         ]
     }
@@ -186,13 +186,15 @@ function chooseTyping() {
         "quick_replies": [
             {
                 "content_type": "text",
-                "title": "🟢 Hoàn thành",
+                "title": "Hoàn thành",
                 "payload": "CHOOSE_SUBMIT",
+                "image_url": "https://i.ibb.co/C6ty3yL/accept.png"
             },
             {
                 "content_type": "text",
                 "title": "Huỷ",
                 "payload": "START",
+                "image_url": "https://i.ibb.co/2Fs6085/cancel.png"
             }
         ]
     }
@@ -206,17 +208,23 @@ function contiChoose (quantity) {
                 "content_type": "text",
                 "title": "Tiếp tục",
                 "payload": `CHOOSE_START`,
-                "image_url": "http://example.com/img/red.png"
+                "image_url": "https://i.ibb.co/TYRxHf4/add.png"
             },
             {
                 "content_type": "text",
                 "title": "Quay lại",
                 "payload": "START",
-                "image_url": "http://example.com/img/green.png"
+                "image_url": 'https://i.ibb.co/TY4Z4kP/previous.png'
             }
         ]
     }
 }
+
+
+// https://i.ibb.co/TY4Z4kP/previous.png
+// https://i.ibb.co/TYRxHf4/add.png
+// https://i.ibb.co/2Fs6085/cancel.png
+// https://i.ibb.co/C6ty3yL/accept.png
 
 module.exports = {
     mainMenu,
