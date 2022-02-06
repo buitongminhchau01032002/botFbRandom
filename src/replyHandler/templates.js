@@ -52,46 +52,48 @@ const start = () => {
                                 "type": "postback",
                                 "title": "Bắt đầu",
                                 "payload": "CHOOSE_START",
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Về màn hình chính",
+                                "payload": "MAIN_MENU",
                             }
                         ]
                     },
                     {
                         "title": "Tung đồng xu",
                         "subtitle": `${BOT} sẽ giúp bạn tung một đồng xu xem nó là mặt sấp hay ngửa nhé!`,
-                        "image_url": "https://i.ibb.co/WtVGNcW/coin-toss.png",
+                        "image_url": "https://i.ibb.co/TvbvHLJ/Flip-A-Coin-Day-640x514.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
                                 "title": "Tung đồng xu",
                                 "payload": "COIN_START",
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Về màn hình chính",
+                                "payload": "MAIN_MENU",
                             }
                         ]
                     },
                     {
                         "title": "Tung xúc xắc",
-                        "subtitle": `${BOT} sẽ giúp bạn quay một con xúc xắc`,
+                        "subtitle": `${BOT} sẽ giúp bạn quay các con xúc xắc`,
                         "image_url": "https://i.ibb.co/RDtHyb8/3d-render-falling-casino-dice-icon-illustration-design-460848-1142.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "Tung xúc xắc",
+                                "title": "Quay xúc xắc",
                                 "payload": "DICE_START",
-                            }
-                        ]
-                    },
-                    {
-                        "title": "Quay lại",
-                        "subtitle": "Quay lại màn hình chính",
-                        "image_url": "https://picsum.photos/id/102/300/400",
-                        "buttons": [
+                            },
                             {
                                 "type": "postback",
-                                "title": "Quay lại",
+                                "title": "Về màn hình chính",
                                 "payload": "MAIN_MENU",
                             }
                         ]
                     }
-
                 ]
             }
         }
