@@ -44,7 +44,7 @@ const start = () => {
                 "template_type": "generic",
                 "elements": [
                     {
-                        "title": "Lựa chọn",
+                        "title": "🤹‍♀ Lựa chọn",
                         "subtitle": `Bạn có đang phân vân giữa các lựa chọn không? ${BOT} sẽ giúp bạn chọn ra một trong số đó nhé`,
                         "image_url": "https://i.ibb.co/RDtHyb8/3d-render-falling-casino-dice-icon-illustration-design-460848-1142.jpg",
                         "buttons": [
@@ -68,7 +68,7 @@ const start = () => {
                         ]
                     },
                     {
-                        "title": "Tung xúc xắc",
+                        "title": "🎲 Tung xúc xắc",
                         "subtitle": `${BOT} sẽ giúp bạn quay một con xúc xắc`,
                         "image_url": "https://i.ibb.co/RDtHyb8/3d-render-falling-casino-dice-icon-illustration-design-460848-1142.jpg",
                         "buttons": [
@@ -186,7 +186,7 @@ function chooseTyping() {
         "quick_replies": [
             {
                 "content_type": "text",
-                "title": "Hoàn thành",
+                "title": "🟢 Hoàn thành",
                 "payload": "CHOOSE_SUBMIT",
             },
             {
