@@ -130,7 +130,7 @@ const replyDICE_FINISH = async (sender_psid, quantity) => {
         let imgResponse = templates.imgDice(num[i]);
         await callSendAPI(sender_psid, imgResponse);
     }
-    let responseString = `${BOT} tung được ${toSymbol(num(0) + '')} `;
+    let responseString = `${BOT} tung được ${toSymbol(num[0] + '')} `;
     responseString += (quantity === 1 ? " nè!" : "nè!");
     await callSendAPI(sender_psid, { text: responseString });
     await sendQuickReply(sender_psid, templates.contiDice(quantity));
