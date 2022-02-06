@@ -85,8 +85,7 @@ const sendQuickReply = (sender_psid, response) => {
 
 const replyGET_STARTED = async (sender_psid) => {
     let response1;
-    let profile = await getProfile(sender_psid);
-    response1 = { "text": `Xin chào ${profile.last_name} ${profile.first_name}, mình là ${BOT}` };
+    response1 = { "text": `🙆‍♀️ Chào bạn, mình là ${BOT}` };
     let response2 = templates.mainMenu();
     await callSendAPI(sender_psid, response1);
     await callSendAPI(sender_psid, response2);
@@ -114,7 +113,7 @@ const replyCOIN_START = async (sender_psid) => {
 
     let response1;
     let randString = Math.floor(Math.random() * 2) === 0 ? 'sấp' : 'ngửa';
-    response1 = { "text": `${BOT} tung được mặt <b>${randString}</b> nè 😊` };
+    response1 = { "text": `${BOT} tung được mặt "${randString}" nè 😊` };
     await callSendAPI(sender_psid, response1);
     await sendQuickReply(sender_psid, templates.contiCoin());
 }

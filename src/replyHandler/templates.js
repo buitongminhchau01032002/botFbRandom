@@ -21,11 +21,23 @@ const mainMenu = () => {
                                 "type": "postback",
                                 "title": "Bắt đầu ngay",
                                 "payload": "START",
-                            },
+                            }
+                        ],
+                    },
+                    {
+                        "title": `Góp ý cho ${BOT}`,
+                        "subtitle": `Bạn có thể góp ý cho ${BOT} tại đây`,
+                        "image_url": "https://picsum.photos/id/102/300/400",
+                        "buttons": [
                             {
                                 "type": "postback",
                                 "title": "Góp ý cho Mitoo",
                                 "payload": "FEED_BACK",
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Báo lỗi",
+                                "payload": "ERROR",
                             }
                         ],
                     }
@@ -45,7 +57,7 @@ const start = () => {
                 "elements": [
                     {
                         "title": "Lựa chọn",
-                        "subtitle": `Bạn có đang phân vân giữa các lựa chọn không? ${BOT} sẽ giúp bạn chọn ra một trong số đó nhé`,
+                        "subtitle": `Bạn có đang phân vân giữa các lựa chọn không? Hãy để ${BOT} giúp bạn!`,
                         "image_url": "https://i.ibb.co/RDtHyb8/3d-render-falling-casino-dice-icon-illustration-design-460848-1142.jpg",
                         "buttons": [
                             {
