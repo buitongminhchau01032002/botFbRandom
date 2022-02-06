@@ -195,6 +195,9 @@ const replyUnknown = async (sender_psid) => {
     await callSendAPI(sender_psid, {
         text: `Ohh, ${BOT} không hiểu tin nhắn của bạn 😭😭`
     });
+    await callSendAPI(sender_psid, {
+        text: `🔴  🔴\n🔴  🔴  🔴\n  🔴  🔴`
+    });
 }
 
 // 0⃣1⃣2⃣3⃣4⃣5⃣6⃣7⃣8⃣9⃣
