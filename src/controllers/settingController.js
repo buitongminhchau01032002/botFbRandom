@@ -48,7 +48,7 @@ const menuController = (req, res) => {
                     },
                     {
                         "type": "postback",
-                        "title": "KHỞI ĐỘNG LẠI BOT",
+                        "title": "KHỞI ĐỘNG LẠI MITOO",
                         "payload": "GET_STARTED"
                     }
                 ]

@@ -85,7 +85,7 @@ const sendQuickReply = (sender_psid, response) => {
 
 const replyGET_STARTED = async (sender_psid) => {
     let response1;
-    response1 = { "text": `🙆‍♀️ Chào bạn, mình là ${BOT}` };
+    response1 = { "text": `🙆‍♀️ Chào bạn, mình là ${BOT}! Rất vui khi được trò chuyện với bạn 💜` };
     let response2 = templates.mainMenu();
     await callSendAPI(sender_psid, response1);
     await callSendAPI(sender_psid, response2);
