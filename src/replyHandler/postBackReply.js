@@ -129,10 +129,11 @@ const replyDICE_FINISH = async (sender_psid, quantity) => {
         num.push(Math.floor(Math.random() * 6) + 1);
     }
 
-    // for (let i = 0; i < quantity; i++) {
-    //     let imgResponse = templates.imgDice(num[i]);
-    //     await callSendAPI(sender_psid, imgResponse);
-    // }
+    for (let i = 0; i < quantity; i++) {
+        await callSendAPI(sender_psid, {
+            text: toStrDice(num[i])
+        });
+    }
     let responseString = `${BOT} tung được `;
     for (let i = 0; i < quantity; i++) {
         responseString += `${toSymbol(num[i]+'')} `;
@@ -195,24 +196,6 @@ const replyUnknown = async (sender_psid) => {
     await callSendAPI(sender_psid, {
         text: `Ohh, ${BOT} không hiểu tin nhắn của bạn 😭😭`
     });
-    await callSendAPI(sender_psid, {
-        text: `­\n     🔴     \n­ `
-    });
-    await callSendAPI(sender_psid, {
-        text: `­\n🔴      🔴\n ­  `
-    });
-    await callSendAPI(sender_psid, {
-        text: `­🔴\n     🔴\n          🔴`
-    });
-    await callSendAPI(sender_psid, {
-        text: `­🔴      🔴\n\n🔴      🔴`
-    });
-    await callSendAPI(sender_psid, {
-        text: `­🔴      🔴\n     🔴\n🔴      🔴`
-    });
-    await callSendAPI(sender_psid, {
-        text: `­🔴 🔴 🔴\n\n🔴 🔴 🔴`
-    });
 }
 
 // 0⃣1⃣2⃣3⃣4⃣5⃣6⃣7⃣8⃣9⃣
@@ -239,6 +222,26 @@ function toSymbol(str) {
             return '8⃣';
         case "9":
             return '9⃣';
+
+        default:
+            return '';
+    }
+}
+
+function toStrDice (num) {
+    switch (num) {
+        case 1:
+            return `­\n     🔴     \n­ `
+        case 2:
+            return `­\n🔴      🔴\n ­  `
+        case 3:
+            return `­🔴\n     🔴\n          🔴`
+        case 4:
+            return `­🔴      🔴\n\n🔴      🔴`
+        case 5:
+            return `­🔴      🔴\n     🔴\n🔴      🔴`
+        case 6:
+            return `­🔴 🔴 🔴\n\n🔴 🔴 🔴`
 
         default:
             return '';
