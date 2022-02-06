@@ -196,13 +196,13 @@ const replyUnknown = async (sender_psid) => {
         text: `Ohh, ${BOT} không hiểu tin nhắn của bạn 😭😭`
     });
     await callSendAPI(sender_psid, {
-        text: `­\n     🔴      \n`
+        text: `­\n     🔴      ­\n­  `
     });
     await callSendAPI(sender_psid, {
-        text: `­\n🔴      🔴\n`
+        text: `­\n🔴      🔴\n   `
     });
     await callSendAPI(sender_psid, {
-        text: `­🔴\n      🔴\n           🔴`
+        text: `­🔴\n     🔴\n           🔴`
     });
     await callSendAPI(sender_psid, {
         text: `­🔴      🔴\n\n🔴      🔴`
