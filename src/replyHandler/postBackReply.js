@@ -3,7 +3,7 @@ const templates = require('./templates');
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 const BOT = 'Mitoo'
 
-let stateChoose = []
+let stateChoose = {}
 
 // Sends response messages via the Send API
 function callSendAPI(sender_psid, response) {
@@ -140,32 +140,23 @@ const replyDICE_FINISH = async (sender_psid, quantity) => {
 }
 
 const replyCHOOSE_START = async (sender_psid) => {
-    stateChoose = stateChoose.filter(item => item.id !== sender_psid);
+    stateChoose[sender_psid] = [];
     await sendQuickReply(sender_psid, templates.chooseTyping());
-    stateChoose.push({
-        id: sender_psid,
-        listChoose: []
-    })
     console.log(stateChoose)
 }
 
 const replyAddChoose = async (sender_psid, received_message) => {
-    let listChoose = [];
-    sendMess.stateChoose.forEach((item, index) => {
-        if (item.id === sender_psid) {
-            stateChoose[index].listChoose.push(received_message.text);
-            listChoose = stateChoose[index].listChoose;
-        }
-    })
-    let stringList = listChoose.reduce((str, cur) => str + `  -"${cur}" \n`, '')
+    stateChoose[sender_psid].push(received_message.text)
+    let stringList = stateChoose[sender_psid].reduce((str, cur) => str + `  -"${cur}" \n`, '')
     let response = {"text": "Các lựa chọn \n" + stringList};
     await callSendAPI(sender_psid, response);
     await sendQuickReply(sender_psid, templates.chooseTyping());
-
+    console.log(stringList)
 }
 
 const replyCHOOSE_SUBMIT = async (sender_psid) => {
 
+    // Add logic
     await sendQuickReply(sender_psid, templates.contiChoose());
 
 }

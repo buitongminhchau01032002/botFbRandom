@@ -5,13 +5,7 @@ function handleMessage(sender_psid, received_message) {
     if (received_message.quick_reply) {
         handleQuickReply(sender_psid, received_message);
     } else if (received_message.text) {
-        let indexUser = -1;
-        sendMess.stateChoose.forEach((item, index) => {
-            if (item.id === sender_psid) {
-                indexUser = index;
-            }
-        })
-        if (indexUser !== -1) {
+        if (sendMess.stateChoose[sender_psid] !== undefined) {
             sendMess.replyAddChoose(sender_psid, received_message)
             console.log('run reply')
         }
