@@ -27,7 +27,7 @@ const mainMenu = () => {
                     {
                         "title": `Góp ý cho ${BOT}`,
                         "subtitle": `Bạn có thể góp ý cho ${BOT} tại đây`,
-                        "image_url": "https://picsum.photos/id/102/300/400",
+                        "image_url": "https://i.ibb.co/DbDJGjz/feedback.png",
                         "buttons": [
                             {
                                 "type": "postback",
