@@ -182,7 +182,7 @@ function imgDice(num) {
 
 function chooseTyping() {
     return {
-        "text": `Bạn hãy gửi từng lựa chọn cho ${BOT}. Khi nào xong thì nhấn "Hoàn thành" ${BOT} nhé!`,
+        "text": `Bạn hãy gửi từng lựa chọn cho ${BOT}. Khi nào xong thì nhấn "Hoàn thành" nhé!`,
         "quick_replies": [
             {
                 "content_type": "text",

@@ -10,7 +10,7 @@ function handleMessage(sender_psid, received_message) {
             console.log('run reply')
         }
     }
-    
+
 }
 
 const handleQuickReply = (sender_psid, received_message) => {
@@ -30,6 +30,9 @@ const handleQuickReply = (sender_psid, received_message) => {
             break;
         case 'DICE_3':
             sendMess.replyDICE_FINISH(sender_psid, 3);
+            break;
+        case 'CHOOSE_START':
+            sendMess.replyCHOOSE_START(sender_psid);
             break;
         case 'CHOOSE_SUBMIT':
             sendMess.replyCHOOSE_SUBMIT(sender_psid);

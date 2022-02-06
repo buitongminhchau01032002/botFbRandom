@@ -130,10 +130,7 @@ const replyDICE_FINISH = async (sender_psid, quantity) => {
         let imgResponse = templates.imgDice(num[i]);
         await callSendAPI(sender_psid, imgResponse);
     }
-    let responseString = `${BOT} tung được "${num[0]}"`;
-    for (let i = 1; i < quantity; i++) {
-        responseString += `, "${num[i]}" `;
-    }
+    let responseString = `${BOT} tung được ${toSymbol(num(0) + '')} `;
     responseString += (quantity === 1 ? " nè!" : "nè!");
     await callSendAPI(sender_psid, { text: responseString });
     await sendQuickReply(sender_psid, templates.contiDice(quantity));
@@ -147,8 +144,8 @@ const replyCHOOSE_START = async (sender_psid) => {
 
 const replyAddChoose = async (sender_psid, received_message) => {
     stateChoose[sender_psid].push(received_message.text)
-    let stringList = stateChoose[sender_psid].reduce((str, cur) => str + `  -"${cur}" \n`, '')
-    let response = {"text": "Các lựa chọn \n" + stringList};
+    let stringList = stateChoose[sender_psid].reduce((str, cur) => str + `- ${cur} \n`, '')
+    let response = { "text": "Các lựa chọn: \n" + stringList };
     await callSendAPI(sender_psid, response);
     await sendQuickReply(sender_psid, templates.chooseTyping());
     console.log(stringList)
@@ -159,6 +156,36 @@ const replyCHOOSE_SUBMIT = async (sender_psid) => {
     // Add logic
     await sendQuickReply(sender_psid, templates.contiChoose());
 
+}
+
+// 0⃣1⃣2⃣3⃣4⃣5⃣6⃣7⃣8⃣9⃣
+
+function toSymbol(str) {
+    switch (str) {
+        case "0":
+            return '0⃣';
+        case "1":
+            return '1⃣';
+        case "2":
+            return '2⃣';
+        case "3":
+            return '3⃣';
+        case "4":
+            return '4⃣';
+        case "5":
+            return '5⃣';
+        case "6":
+            return '6⃣';
+        case "7":
+            return '7⃣';
+        case "8":
+            return '8⃣';
+        case "9":
+            return '9⃣';
+
+        default:
+            return '';
+    }
 }
 
 module.exports = {
