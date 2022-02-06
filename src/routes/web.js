@@ -10,6 +10,7 @@ const initWebRoute = (app) => {
     router.post('/webhook', fbController.postWebhook);
     router.get('/webhook', fbController.getWebhook);
     router.get('/createGetStartedButton', settingController.getstartedButtonController);
+    router.get('/createMenu', settingController.menuController);
     return app.use('/', router);
 }
 
