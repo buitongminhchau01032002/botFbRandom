@@ -23,6 +23,9 @@ const handleQuickReply = (sender_psid, received_message) => {
         case 'COIN_START':
             sendMess.replyCOIN_START(sender_psid);
             break;
+            case 'MAIN_MENU':
+                sendMess.replyMAIN_MENU(sender_psid);
+                break;
         case 'DICE_1':
             sendMess.replyDICE_FINISH(sender_psid, 1);
             break;

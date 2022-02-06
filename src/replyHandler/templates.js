@@ -234,6 +234,20 @@ function contiChoose (quantity) {
     }
 }
 
+function unknown () {
+    return {
+        "text": `Huhu, ${BOT} không hiểu tin nhắn của bạn 😭😭`,
+        "quick_replies": [
+            {
+                "content_type": "text",
+                "title": "Về màn hình chính",
+                "payload": `MAIN_MENU`,
+                "image_url": "https://i.ibb.co/2NBXNnD/home.png"
+            }
+        ]
+    }
+}
+
 
 // https://i.ibb.co/qm8TLbp/back.png
 // https://i.ibb.co/HYpxVpj/add.png
@@ -248,5 +262,6 @@ module.exports = {
     imgDice,
     contiDice,
     chooseTyping,
-    contiChoose
+    contiChoose,
+    unknown
 }
