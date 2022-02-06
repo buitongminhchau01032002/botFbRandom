@@ -72,6 +72,8 @@ function handlePostback(sender_psid, received_postback) {
         case 'ERROR':
             sendMess.replyNONE(sender_psid);
             break;
+        case 'ABOUT':
+            sendMess.replyABOUT(sender_psid);
         default:
             console.log('Incorrect post back');
     }

@@ -14,12 +14,12 @@ const mainMenu = () => {
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": `${BOT} là ai?`,
+                                "title": `MITOO LÀ AI?`,
                                 "payload": "ABOUT",
                             },
                             {
                                 "type": "postback",
-                                "title": "Bắt đầu ngay",
+                                "title": "KHÁM PHÁ NGAY",
                                 "payload": "START",
                             }
                         ],
@@ -31,12 +31,12 @@ const mainMenu = () => {
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "Góp ý cho Mitoo",
+                                "title": "GÓP Ý CHO MITOO",
                                 "payload": "FEED_BACK",
                             },
                             {
                                 "type": "postback",
-                                "title": "Báo lỗi",
+                                "title": "BÁO LỖI",
                                 "payload": "ERROR",
                             }
                         ],
@@ -62,12 +62,12 @@ const start = () => {
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "Bắt đầu",
+                                "title": "BẮT ĐẦU",
                                 "payload": "CHOOSE_START",
                             },
                             {
                                 "type": "postback",
-                                "title": "Về màn hình chính",
+                                "title": "VỀ MÀN HÌNH CHÍNH",
                                 "payload": "MAIN_MENU",
                             }
                         ]
@@ -79,12 +79,12 @@ const start = () => {
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "Tung đồng xu",
+                                "title": "TUNG ĐỒNG XU",
                                 "payload": "COIN_START",
                             },
                             {
                                 "type": "postback",
-                                "title": "Về màn hình chính",
+                                "title": "VỀ MÀN HÌNH CHÍNH",
                                 "payload": "MAIN_MENU",
                             }
                         ]
@@ -96,12 +96,12 @@ const start = () => {
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "Quay xúc xắc",
+                                "title": "QUAY XÚC XẮC",
                                 "payload": "DICE_START",
                             },
                             {
                                 "type": "postback",
-                                "title": "Về màn hình chính",
+                                "title": "VỀ MÀN HÌNH CHÍNH",
                                 "payload": "MAIN_MENU",
                             }
                         ]
@@ -118,13 +118,13 @@ function contiCoin() {
         "quick_replies": [
             {
                 "content_type": "text",
-                "title": "Tiếp tục",
+                "title": "TIẾP TỤC",
                 "payload": "COIN_START",
                 "image_url": "https://i.ibb.co/HYpxVpj/add.png"
             },
             {
                 "content_type": "text",
-                "title": "Quay lại",
+                "title": "QUAY LẠI",
                 "payload": "START",
                 "image_url": "https://i.ibb.co/qm8TLbp/back.png"
             }
@@ -138,13 +138,13 @@ function contiDice (quantity) {
         "quick_replies": [
             {
                 "content_type": "text",
-                "title": "Tiếp tục",
+                "title": "TIẾP TỤC",
                 "payload": `DICE_${quantity}`,
                 "image_url": "https://i.ibb.co/HYpxVpj/add.png"
             },
             {
                 "content_type": "text",
-                "title": "Quay lại",
+                "title": "QUAY LẠI",
                 "payload": "START",
                 "image_url": "https://i.ibb.co/qm8TLbp/back.png"
             }
@@ -158,17 +158,17 @@ function diceNum() {
         "quick_replies": [
             {
                 "content_type": "text",
-                "title": "1 viên",
+                "title": "1 VIÊN",
                 "payload": "DICE_1",
             },
             {
                 "content_type": "text",
-                "title": "2 viên",
+                "title": "2 VIÊN",
                 "payload": "DICE_2",
             },
             {
                 "content_type": "text",
-                "title": "3 viên",
+                "title": "3 VIÊN",
                 "payload": "DICE_3",
             }
         ]
@@ -196,17 +196,17 @@ function imgDice(num) {
 
 function chooseTyping() {
     return {
-        "text": `Bạn hãy gửi từng lựa chọn cho ${BOT}. Khi nào xong thì nhấn "Hoàn thành" nhé!`,
+        "text": `Bạn hãy gửi từng lựa chọn cho ${BOT}. Khi nào xong thì nhấn "HOÀN THÀNH" nhé!`,
         "quick_replies": [
             {
                 "content_type": "text",
-                "title": "Hoàn thành",
+                "title": "HOÀN THÀNH",
                 "payload": "CHOOSE_SUBMIT",
                 "image_url": "https://i.ibb.co/fCD7jrh/accept.png"
             },
             {
                 "content_type": "text",
-                "title": "Huỷ",
+                "title": "HUỶ",
                 "payload": "START",
                 "image_url": "https://i.ibb.co/26zcRJ2/cancel.png"
             }
@@ -220,13 +220,13 @@ function contiChoose (quantity) {
         "quick_replies": [
             {
                 "content_type": "text",
-                "title": "Tiếp tục",
+                "title": "TIẾP TỤC",
                 "payload": `CHOOSE_START`,
                 "image_url": "https://i.ibb.co/HYpxVpj/add.png"
             },
             {
                 "content_type": "text",
-                "title": "Quay lại",
+                "title": "QUAY LẠI",
                 "payload": "START",
                 "image_url": 'https://i.ibb.co/qm8TLbp/back.png'
             }
@@ -240,7 +240,7 @@ function unknown () {
         "quick_replies": [
             {
                 "content_type": "text",
-                "title": "Về màn hình chính",
+                "title": "VỀ MÀN HÌNH CHÍNH",
                 "payload": `MAIN_MENU`,
                 "image_url": "https://i.ibb.co/2NBXNnD/home.png"
             }
@@ -248,6 +248,25 @@ function unknown () {
     }
 }
 
+function about () {
+    return {
+        "text": `Bạn muốn ${BOT} dẫn đi đâu nè!`,
+        "quick_replies": [
+            {
+                "content_type": "text",
+                "title": "VỀ MÀN HÌNH CHÍNH",
+                "payload": `MAIN_MENU`,
+                "image_url": "https://i.ibb.co/2NBXNnD/home.png"
+            },
+            {
+                "content_type": "text",
+                "title": "KHÁM PHÁ NGAY",
+                "payload": `START`,
+                "image_url": "https://i.ibb.co/1rNPr8c/categories.png"
+            }
+        ]
+    }
+}
 
 // https://i.ibb.co/qm8TLbp/back.png
 // https://i.ibb.co/HYpxVpj/add.png
@@ -263,5 +282,6 @@ module.exports = {
     contiDice,
     chooseTyping,
     contiChoose,
-    unknown
+    unknown,
+    about
 }

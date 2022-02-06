@@ -193,6 +193,16 @@ const replyCHOOSE_SUBMIT = async (sender_psid) => {
 
 }
 
+const replyABOUT = async (sender_psid) => {
+
+    await callSendAPI(sender_psid, {
+        text: `Chào bạn! Mình là ${BOT}, nhiệm vụ chính của ${BOT} là giúp bạn chọn ngẫu nhiên một cái gì đó.
+        Ví dụ như chọn cái áo nào để đi chơi với crush 😆. \n Ngoài ra, ${BOT} còn có một số chức năng khác như tung đồng xu, quay xúc xắc đó nha 👌\n
+        Hãy khác phá ${BOT} nha, chúc bạn vui vẻ ^^`
+    });
+    await sendQuickReply(sender_psid, templates.about());
+}
+
 
 const replyNONE = async (sender_psid) => {
 
@@ -269,5 +279,6 @@ module.exports = {
     replyCHOOSE_SUBMIT,
     replyAddChoose,
     replyNONE,
-    replyUnknown
+    replyUnknown,
+    replyABOUT
 }
