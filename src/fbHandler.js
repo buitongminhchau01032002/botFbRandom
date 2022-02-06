@@ -7,7 +7,8 @@ function handleMessage(sender_psid, received_message) {
     } else if (received_message.text) {
         if (sendMess.stateChoose[sender_psid] !== undefined) {
             sendMess.replyAddChoose(sender_psid, received_message)
-            console.log('run reply')
+        } else {
+            sendMess.replyUnknown(sender_psid)
         }
     }
 
@@ -63,6 +64,10 @@ function handlePostback(sender_psid, received_postback) {
             break;
         case 'CHOOSE_START':
             sendMess.replyCHOOSE_START(sender_psid);
+            break;
+        case 'FEED_BACK':
+        case 'ERROR':
+            sendMess.replyNONE(sender_psid);
             break;
         default:
             console.log('Incorrect post back');

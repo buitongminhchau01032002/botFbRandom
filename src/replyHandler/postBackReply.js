@@ -129,10 +129,10 @@ const replyDICE_FINISH = async (sender_psid, quantity) => {
         num.push(Math.floor(Math.random() * 6) + 1);
     }
 
-    for (let i = 0; i < quantity; i++) {
-        let imgResponse = templates.imgDice(num[i]);
-        await callSendAPI(sender_psid, imgResponse);
-    }
+    // for (let i = 0; i < quantity; i++) {
+    //     let imgResponse = templates.imgDice(num[i]);
+    //     await callSendAPI(sender_psid, imgResponse);
+    // }
     let responseString = `${BOT} tung được `;
     for (let i = 0; i < quantity; i++) {
         responseString += `${toSymbol(num[i]+'')} `;
@@ -181,6 +181,22 @@ const replyCHOOSE_SUBMIT = async (sender_psid) => {
 
 }
 
+
+const replyNONE = async (sender_psid) => {
+
+    await callSendAPI(sender_psid, {
+        text: `Ohh, tính năng này chưa được cập nhật 😭😭. ${BOT} đưa bạn về màn hình chính nhé!`
+    });
+    replyMAIN_MENU(sender_psid);
+}
+
+const replyUnknown = async (sender_psid) => {
+
+    await callSendAPI(sender_psid, {
+        text: `Ohh, ${BOT} không hiểu tin nhắn của bạn 😭😭`
+    });
+}
+
 // 0⃣1⃣2⃣3⃣4⃣5⃣6⃣7⃣8⃣9⃣
 
 function toSymbol(str) {
@@ -221,5 +237,7 @@ module.exports = {
     replyDICE_FINISH,
     replyCHOOSE_START,
     replyCHOOSE_SUBMIT,
-    replyAddChoose
+    replyAddChoose,
+    replyNONE,
+    replyUnknown
 }

@@ -91,7 +91,7 @@ const start = () => {
                     },
                     {
                         "title": "Quay xúc xắc",
-                        "subtitle": `${BOT} sẽ giúp bạn quay các con xúc xắc`,
+                        "subtitle": `${BOT} sẽ giúp bạn quay các viên xúc xắc`,
                         "image_url": "https://i.ibb.co/RDtHyb8/3d-render-falling-casino-dice-icon-illustration-design-460848-1142.jpg",
                         "buttons": [
                             {
@@ -154,7 +154,7 @@ function contiDice (quantity) {
 
 function diceNum() {
     return {
-        "text": "Bạn cần tung bao nhiêu viên xúc xắc nà!",
+        "text": "Bạn cần quay bao nhiêu viên xúc xắc nà!",
         "quick_replies": [
             {
                 "content_type": "text",
