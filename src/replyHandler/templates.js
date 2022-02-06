@@ -194,7 +194,7 @@ function chooseTyping() {
                 "content_type": "text",
                 "title": "Huỷ",
                 "payload": "START",
-                "image_url": "https://i.ibb.co/Y8J90Ky/cancel.png"
+                "image_url": "https://i.ibb.co/26zcRJ2/cancel.png"
             }
         ]
     }
@@ -223,7 +223,7 @@ function contiChoose (quantity) {
 
 // https://i.ibb.co/qm8TLbp/back.png
 // https://i.ibb.co/HYpxVpj/add.png
-// https://i.ibb.co/Y8J90Ky/cancel.png
+// https://i.ibb.co/26zcRJ2/cancel.png
 // https://i.ibb.co/fCD7jrh/accept.png
 
 module.exports = {
