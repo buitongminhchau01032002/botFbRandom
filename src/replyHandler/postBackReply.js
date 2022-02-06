@@ -110,7 +110,7 @@ const replyCOIN_START = async (sender_psid) => {
 
     let response1;
     let randString = Math.floor(Math.random() * 2) === 0 ? 'sấp' : 'ngửa';
-    response1 = { "text": `${BOT} tung được mặt "${randString}" nè 😊` };
+    response1 = { "text": `🪙 ${BOT} tung được mặt *${randString}* nè 😊` };
     await callSendAPI(sender_psid, response1);
     await sendQuickReply(sender_psid, templates.contiCoin());
 }
@@ -130,7 +130,7 @@ const replyDICE_FINISH = async (sender_psid, quantity) => {
         let imgResponse = templates.imgDice(num[i]);
         await callSendAPI(sender_psid, imgResponse);
     }
-    let responseString = `${BOT} tung được `;
+    let responseString = `🎲 ${BOT} tung được `;
     for (let i = 0; i < quantity; i++) {
         responseString += `${toSymbol(num[i]+'')} `;
     }
@@ -148,7 +148,7 @@ const replyCHOOSE_START = async (sender_psid) => {
 const replyAddChoose = async (sender_psid, received_message) => {
     stateChoose[sender_psid].push(received_message.text)
     let stringList = stateChoose[sender_psid].reduce((str, cur) => str + `👉 ${cur} \n`, '')
-    let response = { "text": "Các lựa chọn: \n" + stringList };
+    let response = { "text": "Các lựa chọn 🗒: \n" + stringList };
     await callSendAPI(sender_psid, response);
     await sendQuickReply(sender_psid, templates.chooseTyping());
     console.log(stringList)
