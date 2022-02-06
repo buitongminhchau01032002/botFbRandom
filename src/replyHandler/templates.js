@@ -75,7 +75,7 @@ const start = () => {
                     {
                         "title": "Tung đồng xu",
                         "subtitle": `${BOT} sẽ giúp bạn tung một đồng xu xem nó là mặt sấp hay ngửa nhé!`,
-                        "image_url": "https://i.ibb.co/TvbvHLJ/Flip-A-Coin-Day-640x514.jpg",
+                        "image_url": "https://i.ibb.co/VSmC632/Flip-A-Coin-Day-640x514.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
