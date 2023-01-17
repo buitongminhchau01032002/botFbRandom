@@ -32,6 +32,7 @@ const getWebhook = (req, res) => {
 };
 
 const postWebhook = (req, res) => {
+    console.log('POST WEBHOOK');
     // Parse the request body from the POST
     let body = req.body;
 
